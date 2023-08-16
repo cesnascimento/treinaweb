@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-{% extends 'adminlte/base.html' %}
-<html lang="en">
+{% extends 'base.html' %}
+{% load bootstrap5 %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+{% block title %}
+Cadastro de serviço
+{% endblock title %}
 
-<body>
-
-  {% block content %}
+{% block content %}
+<div class="card card-primary">
+  <div class="card-header">
+    <div class="card-title">Cadastro de serviço</div>
+  </div>
+  <div class="card-body">
   <form method="POST">
     {% csrf_token %}
-    {{ form_servico.as_p }}
-    <button class="btn btn-primary" type="submit">Cadastrar</button>
+    {% bootstrap_form form_servico %}
+    <button class="btn btn-primary" type="submit">Salvar</button>
   </form>
-  {% endblock content %}
-
-</body>
-
-</html>
+</div>
+</div>
+{% endblock content %}
