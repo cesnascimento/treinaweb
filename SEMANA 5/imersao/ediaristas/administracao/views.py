@@ -19,7 +19,7 @@ def listar_servicos(request):
 
 
 def editar_servico(request, id):
-  servico = Servico.objects.get(id=id)
+  servico = Servico.objects.get(id=id)erm
   form_servico = ServicoForm(request.POST or None, instance=servico)
   if form_servico.is_valid():
      form_servico.save()
